@@ -1,4 +1,17 @@
 <app-header></app-header>
-<p>login works!</p>
 
-<h1>Hello</h1>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
+
+<div>
+    <label>
+        username:
+        <input type="text" formControlName="username">
+    </label>
+    <label>
+        password:
+        <input type="password" formControlName="password">
+    </label>
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+
+</div>
+</form>
